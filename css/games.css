@@ -1,0 +1,90 @@
+:root {
+  --white-color: #FFF;
+  --black-color: #000;
+  --character-health: #818cf8;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.game-container {
+  display: inline-block;
+  position: relative;
+}
+
+.game-status {
+  align-items: center;
+  display: flex;
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+}
+
+.timer {
+  background-color: var(--black-color);
+  width: 100px;
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color);
+  border: 4px solid var(--white-color);
+}
+
+.display-text {
+  align-items: center;
+  bottom: 0;
+  color: var(--white-color);
+  display: none;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.life-bar {
+  background-color: red;
+  height: 30px;
+}
+
+.character-health {
+  background-color: var(--character-health);
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.player-health-container {
+  border-bottom: 4px solid var(--white-color);
+  border-left: 4px solid var(--white-color);
+  border-top: 4px solid var(--white-color);
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+}
+
+.player-health-container .life-bar {
+  width: 100%;
+}
+
+.player-health {
+  width: 100%;
+}
+
+.enemy-health-container {
+  border-bottom: 4px solid var(--white-color);
+  border-right: 4px solid var(--white-color);
+  border-top: 4px solid var(--white-color);
+  position: relative;
+  width: 100%;
+}
+
+.enemy-health {
+  left: 0;
+}

@@ -1,0 +1,35 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/games.css">
+</head>
+
+<body>
+  <!-- red container div -->
+  <div class="game-container">
+    <!-- smaller red container div -->
+    <div class="game-status">
+      <!-- player health -->
+      <div class="player-health-container">
+        <div class="life-bar"></div>
+        <div id="playerHealth" class="character-health player-health"></div>
+      </div>
+
+      <!-- timer -->
+      <div id="timer" class="timer">10</div>
+
+      <!-- enemy health -->
+      <div class="enemy-health-container">
+        <div class="life-bar"></div>
+        <div id="enemyHealth" class="character-health enemy-health"></div>
+      </div>
+    </div>
+
+    <div class="display-text"></div>
+
+    <canvas></canvas>
+  </div>
+
+  <script type="module" src="./js/game.js"></script>
+</body>

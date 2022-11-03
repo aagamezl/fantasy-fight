@@ -1,5 +1,24 @@
 import { gsap } from 'gsap'
 
+import backgroundImage from './../images/background.png'
+import shopImage from './../images/shop.png'
+
+import samuraiMackIdleImage from './../images/samuraiMack/Idle-Complete.png'
+import samuraiMackAttackImage from './../images/samuraiMack/Attack1-Complete.png'
+import samuraiMackRunImage from './../images/samuraiMack/Run-Complete.png'
+import samuraiMackFallImage from './../images/samuraiMack/Fall-Complete.png'
+import samuraiMackDeathImage from './../images/samuraiMack/Death.png'
+import samuraiMackTakeHitImage from './../images/samuraiMack/Take Hit - white silhouette.png'
+import samuraiMackJumpImage from './../images/samuraiMack/Jump-Complete.png'
+
+import kenjiIdleImage from './../images/kenji/Idle-Complete.png'
+import kenjiAttackImage from './../images/kenji/Attack1-Complete.png'
+import kenjiRunImage from './../images/kenji/Run-Complete.png'
+import kenjiFallImage from './../images/kenji/Fall-Complete.png'
+import kenjiDeathImage from './../images/kenji/Death.png'
+import kenjiTakeHitImage from './../images/kenji/Take hit.png'
+import kenjiJumpImage from './../images/kenji/Jump-Complete.png'
+
 import { Sprite, Fighter } from './classes'
 import { decreaseTimer, determineWinner, rectangularCollision, timerId } from './utils'
 import { config } from './config'
@@ -17,7 +36,7 @@ const background = new Sprite({
     x: 0,
     y: 0
   },
-  imageSrc: './img/background.png',
+  imageSrc: backgroundImage,
   canvas,
   context
 })
@@ -27,7 +46,7 @@ const shop = new Sprite({
     x: 600,
     y: 128
   },
-  imageSrc: './img/shop.png',
+  imageSrc: shopImage,
   scale: 2.75,
   framesMax: 6,
   canvas,
@@ -43,7 +62,7 @@ export const player = new Fighter({
     x: 0,
     y: 0
   },
-  imageSrc: './img/samuraiMack/Idle.png',
+  imageSrc: samuraiMackIdleImage,
   framesMax: 8,
   scale: 2.5,
   offset: {
@@ -52,31 +71,31 @@ export const player = new Fighter({
   },
   sprites: {
     idle: {
-      imageSrc: './img/samuraiMack/Idle-Complete.png',
+      imageSrc: samuraiMackIdleImage,
       framesMax: 8
     },
     run: {
-      imageSrc: './img/samuraiMack/Run-Complete.png',
+      imageSrc: samuraiMackRunImage,
       framesMax: 8
     },
     jump: {
-      imageSrc: './img/samuraiMack/Jump.png',
+      imageSrc: samuraiMackJumpImage,
       framesMax: 2
     },
     fall: {
-      imageSrc: './img/samuraiMack/Fall.png',
+      imageSrc: samuraiMackFallImage,
       framesMax: 2
     },
     attack1: {
-      imageSrc: './img/samuraiMack/Attack1-Complete.png',
+      imageSrc: samuraiMackAttackImage,
       framesMax: 6
     },
     takeHit: {
-      imageSrc: './img/samuraiMack/Take Hit - white silhouette.png',
+      imageSrc: samuraiMackTakeHitImage,
       framesMax: 4
     },
     death: {
-      imageSrc: './img/samuraiMack/Death.png',
+      imageSrc: samuraiMackDeathImage,
       framesMax: 6
     }
   },
@@ -102,7 +121,7 @@ export const enemy = new Fighter({
     y: 0
   },
   color: 'blue',
-  imageSrc: './img/kenji/Idle.png',
+  imageSrc: kenjiIdleImage,
   framesMax: 4,
   scale: 2.5,
   offset: {
@@ -111,31 +130,31 @@ export const enemy = new Fighter({
   },
   sprites: {
     idle: {
-      imageSrc: './img/kenji/Idle.png',
+      imageSrc: kenjiIdleImage,
       framesMax: 4
     },
     run: {
-      imageSrc: './img/kenji/Run.png',
+      imageSrc: kenjiRunImage,
       framesMax: 8
     },
     jump: {
-      imageSrc: './img/kenji/Jump.png',
+      imageSrc: kenjiJumpImage,
       framesMax: 2
     },
     fall: {
-      imageSrc: './img/kenji/Fall.png',
+      imageSrc: kenjiFallImage,
       framesMax: 2
     },
     attack1: {
-      imageSrc: './img/kenji/Attack1.png',
+      imageSrc: kenjiAttackImage,
       framesMax: 4
     },
     takeHit: {
-      imageSrc: './img/kenji/Take hit.png',
+      imageSrc: kenjiTakeHitImage,
       framesMax: 3
     },
     death: {
-      imageSrc: './img/kenji/Death.png',
+      imageSrc: kenjiDeathImage,
       framesMax: 7
     }
   },

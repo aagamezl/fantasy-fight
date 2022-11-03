@@ -1,5 +1,6 @@
 // vite.config.js
 export default {
+  base: 'fantasy-fight',
   assetsInclude: ['**/*.png'],
   build: {
     manifest: true,

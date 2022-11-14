@@ -16,7 +16,7 @@ import kenjiAttackImage from './../images/kenji/Attack1-Complete.png'
 import kenjiRunImage from './../images/kenji/Run-Complete.png'
 import kenjiFallImage from './../images/kenji/Fall-Complete.png'
 import kenjiDeathImage from './../images/kenji/Death.png'
-import kenjiTakeHitImage from './../images/kenji/Take hit.png'
+import kenjiTakeHitImage from './../images/kenji/Take hit-Complete.png'
 import kenjiJumpImage from './../images/kenji/Jump-Complete.png'
 
 import { Sprite, Fighter } from './classes'
@@ -196,7 +196,7 @@ function animate () {
   context.fillStyle = 'rgba(255, 255, 255, 0.15)'
   context.fillRect(0, 0, canvas.width, canvas.height)
   player.update(player.position.x > enemy.position.x + (enemy.width / 2))
-  enemy.update(/* enemy.position.x > player.position.x */)
+  enemy.update(enemy.position.x < player.position.x)
 
   player.velocity.x = 0
   enemy.velocity.x = 0

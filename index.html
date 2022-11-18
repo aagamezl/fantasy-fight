@@ -1,35 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/games.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fantasy Fighting</title>
+
+  <link rel="stylesheet" href="css/site.css">
 </head>
-
 <body>
-  <!-- red container div -->
-  <div class="game-container">
-    <!-- smaller red container div -->
-    <div class="game-status">
-      <!-- player health -->
-      <div class="player-health-container">
-        <div class="life-bar"></div>
-        <div id="playerHealth" class="character-health player-health"></div>
-      </div>
+  <canvas></canvas>
+  <img src="./assets/ken.png" alt="ken" srcset="" />
+  <img src="./assets/ryu.png" alt="ryu" srcset="" />
+  <img src="./assets/Ken-SF2-Stage.png" alt="background" srcset="" />
 
-      <!-- timer -->
-      <div id="timer" class="timer">10</div>
-
-      <!-- enemy health -->
-      <div class="enemy-health-container">
-        <div class="life-bar"></div>
-        <div id="enemyHealth" class="character-health enemy-health"></div>
-      </div>
-    </div>
-
-    <div class="display-text"></div>
-
-    <canvas></canvas>
-  </div>
-
-  <script type="module" src="./js/game.js"></script>
+  <script type="module" src="js/game.js"></script>
 </body>
+</html>

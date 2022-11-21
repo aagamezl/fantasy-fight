@@ -9,11 +9,28 @@
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-  <canvas></canvas>
+  <form action="">
+    <div>
+      <input id="ken" type="checkbox" name="fighter" value="Ken">
+      <label for="ken">Ken</label>
+    </div>
+    <div>
+      <input id="ryu" type="checkbox" name="fighter" value="Ryu">
+      <label for="ryu">Ryu</label>
+    </div>
+
+    <select name="state" id="state-dropdown"></select>
+
+    <button type="submit">Transition!</button>
+  </form>
+  <main>
+    <canvas width="384" height="224"></canvas>
+  </main>
+
   <img src="./assets/ken.png" alt="ken" srcset="" />
   <img src="./assets/ryu.png" alt="ryu" srcset="" />
   <img src="./assets/Ken-SF2-Stage.png" alt="background" srcset="" />
 
-  <script type="module" src="js/game.js"></script>
+  <script type="module" src="src/index.js"></script>
 </body>
 </html>

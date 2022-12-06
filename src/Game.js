@@ -4,22 +4,39 @@ import { Ryu } from './entities/fighters/Ryu'
 import { FpsCounter } from './entities/FpsCounter'
 import { STAGE_FLOOR } from './contants/stage'
 import { FighterDirection } from './contants/fighter'
+import { Shadow } from './entities/fighters/Shadow'
+import { pollGamePads, registerGamepadEvents, registerKeyboardEvents } from './InputHandler'
+
+/**
+ * TimeFrame describes time frame of the game
+ *
+ * @typedef TimeFrame
+ * @property {number} previous previous time frame
+ * @property {number} secondsPassed seconds elapsed after the last update cycle
+ */
 
 export class Game {
   constructor () {
     this.context = this.getContext()
 
     this.fighters = [
-      new Ryu(104, STAGE_FLOOR, FighterDirection.RIGHT),
-      new Ken(280, STAGE_FLOOR, FighterDirection.LEFT)
+      new Ryu(104, STAGE_FLOOR, FighterDirection.RIGHT, 0),
+      new Ken(280, STAGE_FLOOR, FighterDirection.LEFT, 1)
     ]
+
+    this.fighters[0].opponent = this.fighters[1]
+    this.fighters[1].opponent = this.fighters[0]
 
     this.entities = [
       new Stage(),
+      ...this.fighters.map(fighter => new Shadow(fighter)),
       ...this.fighters,
       new FpsCounter()
     ]
 
+    /**
+     * @type {TimeFrame}
+     */
     this.frameTime = {
       previous: 0,
       secondsPassed: 0
@@ -50,31 +67,19 @@ export class Game {
   frame (time) {
     window.requestAnimationFrame(this.frame.bind(this))
 
-    this.frameTime.secondsPassed = (time - this.frameTime.previous) / 1000
-    this.frameTime.previous = time
+    this.frameTime = {
+      secondsPassed: (time - this.frameTime.previous) / 1000,
+      previous: time
+    }
 
+    pollGamePads()
     this.update()
     this.draw()
   }
 
-  handleFormSubmit (event) {
-    event.preventDefault()
-
-    const selectCheckboxes = Array
-      .from(document.querySelectorAll('input:checked'))
-      .map(checkbox => checkbox.value)
-
-    const options = event.target.querySelector('select')
-
-    this.fighters.forEach(fighter => {
-      if (selectCheckboxes.includes(fighter.name)) {
-        fighter.changeState(options.value)
-      }
-    })
-  }
-
   start () {
-    document.addEventListener('submit', this.handleFormSubmit.bind(this))
+    registerKeyboardEvents()
+    registerGamepadEvents()
 
     window.requestAnimationFrame(this.frame.bind(this))
   }
